@@ -1,0 +1,2 @@
+## uploading Data files to AWS EC2:
+scp -i rice.pem -r Rplot/data ubuntu@18.219.134.144:/home/ubuntu/streamlit
