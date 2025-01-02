@@ -1,4 +1,4 @@
-##this pipeline will plot the target trajectories
+##suspended, plot umap using Scanpy
 
 ## libraries========================================
 library(Seurat)
