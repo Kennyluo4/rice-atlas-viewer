@@ -59,8 +59,8 @@ def main():
     
     ## set the plot setting using form submission: 
     with st.sidebar.form(key='Plot_config'):
-        species = st.selectbox('Species', [ '---Please choose---','Osativa', 'test2'])
-        tissue = st.selectbox('Tissue',['---Please choose---','bud', 'crownroot'])
+        species = st.selectbox('Species', [ '---Please choose---','Osativa'])
+        tissue = st.selectbox('Tissue',['---Please choose---','bud', 'crownroot','Eseed','Eseedling', 'leaf','Lseed','panicle','seedling','semroot'])
         gene_list = st.text_area('Gene ID (e.g. LOC_Os10g42750)', 
                                          'LOC_Os01g06250\nLOC_Os04g55970')
         plot_h = st.slider('plot height(cm)', 1,30,10)

@@ -1,7 +1,7 @@
 import streamlit as st
 # import matplotlib.pyplot as plt
 import os, subprocess, glob, atexit
-        
+
 ###############################################
 ##           Configuration                  ###
 ###############################################
@@ -59,8 +59,8 @@ def main():
     
     ## set the plot setting using form submission: 
     with st.sidebar.form(key='Plot_config'):
-        species = st.selectbox('Species', [ '---Please choose---','Osativa', 'test2'])
-        tissue = st.selectbox('Tissue',['---Please choose---','bud', 'crownroot'])
+        species = st.selectbox('Species', [ '---Please choose---','Osativa'])
+        tissue = st.selectbox('Tissue',['---Please choose---','bud', 'crownroot','Eseed','Eseedling', 'leaf','Lseed','panicle','seedling','semroot'])
         fdr = st.text_input('FDR of motif enrichment', value='0.01')
         gene_list = st.text_area('Motif ID (e.g. NAC020, MYB46, HAT1)', 
                                          'NAC011\nNAC005\nMYB46\nWRKY65')
@@ -95,7 +95,7 @@ def main():
     else:
         st.error(':point_left: Please select the dataset and genes for plotting')
     
-                             
+
 if __name__ == '__main__':
     main()
 
