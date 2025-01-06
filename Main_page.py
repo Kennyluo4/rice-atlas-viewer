@@ -6,7 +6,7 @@ import os, atexit, glob
 ###############################################
 # Set the page config to wide mode
 st.set_page_config(layout='centered',
-                   page_title='Plant atlas-main page',
+                   page_title='RiceSCBase',
                    page_icon=':ear_of_rice:'
                     )
 
@@ -39,7 +39,7 @@ def main():
                 </style>
                 """, unsafe_allow_html=True)
     
-    st.markdown('# Welcome to the plant single-cell atlas of cis-regulatory elements ')
+    st.markdown('# Welcome to the RiceSCBase')
     st.image('image/rice_atlas.png', width=600)
     st.markdown('### Visualization tools: \n')
     
