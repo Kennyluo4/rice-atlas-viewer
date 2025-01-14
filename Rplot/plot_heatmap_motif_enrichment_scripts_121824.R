@@ -7,10 +7,10 @@ input_1_users_provide_configure_fl <- as.character(args[1])
 input_2_users_provide_motif_ID_list_fl <- as.character(args[2])
 
 # input_3_required_raw_data_dir <- as.character(args[3])
-input_3_required_raw_data_dir <- 'Rplot/data/input_3_required_raw_data_dir'
+input_3_required_raw_data_dir <- '../data/input_3_required_raw_data_dir'
 
 # input_4_motif_enrichment_all_organ_dir <- as.character(args[4])
-input_4_motif_enrichment_all_organ_dir <- 'Rplot/data/input_4_motif_enrichment_all_organ_dir'
+input_4_motif_enrichment_all_organ_dir <- '../data/input_4_motif_enrichment_all_organ_dir'
 
 input_output_dir <- as.character(args[3])
 

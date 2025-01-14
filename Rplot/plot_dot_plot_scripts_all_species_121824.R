@@ -7,9 +7,9 @@ input_1_users_provide_configure_fl <- as.character(args[1])
 
 input_2_users_provided_target_gene_ID_list_fl <- as.character(args[2])
 
-input_3_zscore_all_organs_dir <- 'Rplot/data/input_3_zscore_all_organs_dir'
+input_3_zscore_all_organs_dir <- '../data/input_3_zscore_all_organs_dir'
 
-input_4_accprop_all_organs_dir <-  'Rplot/data/input_4_accprop_all_organs_dir'
+input_4_accprop_all_organs_dir <-  '../data/input_4_accprop_all_organs_dir'
 
 input_output_file <- as.character(args[3])
 

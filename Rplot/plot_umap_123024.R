@@ -18,7 +18,7 @@ feature_ID_file <- as.character(arg[2])
 output_figure<- as.character(arg[3])
 
 ## testing 
-sobj_file <- 'Rplot/data/sobjs/Crown_root.obj'
+sobj_file <- '../data/sobjs/Crown_root.obj'
 feature_ID_file <- 'Rplot/temp/umap_features.txt'
 output_figure <- 'Rplot/temp/test_umap.tiff'
 

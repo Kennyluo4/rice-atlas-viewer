@@ -60,7 +60,7 @@ def main():
     # feature = st.selectbox('Feature', [ '---Please choose---','Gene', 'TF', 'Mt', 'ACR'])
     feature = st.sidebar.radio('Feature', ['Gene', 'TF', 'Mt', 'ACR'], horizontal=True)
     ## Retrive the featurelist after feature type selection
-    feature_file = f'Rplot/data/trajectory_features/opt_{feature}_feature_list.txt'
+    feature_file = f'../data/trajectory_features/opt_{feature}_feature_list.txt'
     featureIDs = [id.strip() for id in open(feature_file).readlines()]
     featureName = st.sidebar.selectbox('Enter feature name to highlight', ['', *featureIDs])
     

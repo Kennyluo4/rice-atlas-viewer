@@ -27,19 +27,19 @@ input_2_users_select_path_name <- as.character(arg[3])
 input_3_users_provide_ID <- as.character(arg[4])
 
 # input_sorted_pt_dir <- as.character(arg[5])
-input_sorted_pt_dir <-  'Rplot/data/input_sorted_pt_dir'
+input_sorted_pt_dir <-  '../data/input_sorted_pt_dir'
 ##it contains all the sorted pt files used for the plotting
 
 # input_annot_TF_dir <- as.character(arg[6])
-input_annot_TF_dir <- 'Rplot/data/input_annot_TF_dir'
+input_annot_TF_dir <- '../data/input_annot_TF_dir'
 ##it contains all species TF annotation to show their super family information
 
 # input_gene_TF_motif_impute_sparse_rds_dir <- as.character(arg[7])
-input_gene_TF_motif_impute_sparse_rds_dir <- 'Rplot/data/input_gene_TF_motif_impute_sparse_rds_dir'
+input_gene_TF_motif_impute_sparse_rds_dir <- '../data/input_gene_TF_motif_impute_sparse_rds_dir'
 ##it contains the impute sparse rds fl for all genes as well as motifs
 
 # input_traject_meta_fl_dir <- as.character(arg[8])
-input_traject_meta_fl_dir <- 'Rplot/data/input_traject_meta_fl_dir'
+input_traject_meta_fl_dir <- '../data/input_traject_meta_fl_dir'
 
 input_output_dir <- as.character(arg[5])
 

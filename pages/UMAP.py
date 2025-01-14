@@ -36,7 +36,7 @@ def main():
     
     ## Retrive the adata after data type selection
     if dataset != None and dataset != '---Please choose---':
-        filename = f'Rplot/data/sobjs/{dataset}_{feature}_adata.h5ad'
+        filename = f'../data/sobjs/{dataset}_{feature}_adata.h5ad'
         adata = sc.read_h5ad(filename)
 
         # read the genes
