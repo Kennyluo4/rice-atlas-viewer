@@ -15,7 +15,7 @@ arg <- commandArgs(T)
 print(arg)
 
 input_0_users_provide_species_name <- as.character(arg[1])
-input_0_users_provide_species_name <- "Osativa"
+# input_0_users_provide_species_name <- "Osativa"
 #Os Zm
 
 input_1_users_select_cate <- as.character(arg[2])
