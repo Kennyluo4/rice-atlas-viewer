@@ -27,8 +27,8 @@ def generate_png_plot(species, feature, trajectory,candidateID, out_path = 'Rplo
     # Return the path of the generated tiff file
     
     out_fig1 = f"{out_path}/{trajectory}.trajectory.{feature}_heatmap.tiff"     ## same as the output name from Rscript
-    out_fig2 = f"{out_path}/{trajectory}.trajectory.{feature}_UMAP.tiff"
-    return out_fig1, out_fig2
+    # out_fig2 = f"{out_path}/{trajectory}.trajectory.{feature}_UMAP.tiff"
+    return out_fig1
 
 ## Function to clean up temporary files
 def cleanup_temp_folder():
@@ -55,7 +55,7 @@ def main():
     st.sidebar.markdown('## Please select a dataset to plot')
     
     ## set the plot settings: 
-    species = st.sidebar.selectbox('Species', [ '---Please choose---','Osativa', 'test2'])
+    species = st.sidebar.selectbox('Species', [ '---Please choose---','Osativa'])
     trajectory = st.sidebar.selectbox('Trajectory',['---Please choose---','bud_ProcamPhloem', 'bud_ProcamXylem', 'Eseedling_SAMPhloem', 'Eseedling_SAMPhloemCC', 'Eseedling_SAMXylemPrecursor', 'crownroot_QCCortex', 'crownroot_QCMetaXylem', 'crownroot_QCProtoXylem','panicle_PBMSBMSMFM','panicle_PBMSMFM', 'semroot_QCCortex', 'semroot_QCMetaXylem', 'semroot_QCProtoXylem'])
     # feature = st.selectbox('Feature', [ '---Please choose---','Gene', 'TF', 'Mt', 'ACR'])
     feature = st.sidebar.radio('Feature', ['Gene', 'TF', 'Mt', 'ACR'], horizontal=True)
@@ -80,9 +80,13 @@ def main():
     if submitted:
         st.cache_data.clear()  # Clear cache to avoid reusing old data
         if species != '---Please choose---' and feature != '---Please choose---' and trajectory != '---Please choose---':
-            fig1, fig2 = generate_png_plot(species, feature, trajectory, featureName)
+            ## plot the UMAP of selected trajectory
+            umap_fig = f"../data/UMAP_trajectory_plot_dir_tiff/{trajectory}.trajectory.tiff"
+            st.image(umap_fig)
+            ## plot the trajectory heatmap
+            fig1= generate_png_plot(species, feature, trajectory, featureName)
             st.image(fig1)
-            st.image(fig2)
+            # st.image(fig2)
         else:
             st.error(':point_left: Please select the dataset and genes for plotting')
         
