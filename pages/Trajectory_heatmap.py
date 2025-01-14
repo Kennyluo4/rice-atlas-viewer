@@ -9,28 +9,26 @@ import os, subprocess, glob, atexit
 
 ## define function for generation figures using R
 @st.cache_data
-def generate_png_plot(species, feature, trajectory,candidateID):
+def generate_png_plot(species, feature, trajectory,candidateID, out_path = 'Rplot/temp'):
     """
     Run the R script to generate the PNG plot.
     """
     import hashlib
 
-    out_path = 'Rplot/temp'
-
     cmd = ["Rscript", "Rplot/plot_trajectory_genes_TFs_motifs_ACRs_only_heatmap_010925_HD.R", str(species), str(feature),str(trajectory), str(candidateID), str(out_path)]
-    # test = ' '.join(cmd)
-    # st.write('...Running: ', test)
-    
     result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    
+    cmd2 = ["Rscript", "Rplot/plot_trajectory_genes_TFs_motifs_ACRs_only_UMAP_revised_new_011425.R", str(species), str(feature),str(trajectory), str(candidateID), str(out_path)]
+    subprocess.run(cmd2, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     
     if result.returncode != 0:
         st.error(f"Error in R script: {result.stderr.decode('utf-8')}")
         return None
     # Return the path of the generated tiff file
     
-    out_fig = f"{out_path}/{trajectory}.trajectory.{feature}_heatmap.tiff"     ## same as the output name from Rscript
-    
-    return out_fig
+    out_fig1 = f"{out_path}/{trajectory}.trajectory.{feature}_heatmap.tiff"     ## same as the output name from Rscript
+    out_fig2 = f"{out_path}/{trajectory}.trajectory.{feature}_UMAP.tiff"
+    return out_fig1, out_fig2
 
 ## Function to clean up temporary files
 def cleanup_temp_folder():
@@ -82,8 +80,9 @@ def main():
     if submitted:
         st.cache_data.clear()  # Clear cache to avoid reusing old data
         if species != '---Please choose---' and feature != '---Please choose---' and trajectory != '---Please choose---':
-            fig = generate_png_plot(species, feature, trajectory, featureName)
-            st.image(fig)
+            fig1, fig2 = generate_png_plot(species, feature, trajectory, featureName)
+            st.image(fig1)
+            st.image(fig2)
         else:
             st.error(':point_left: Please select the dataset and genes for plotting')
         
